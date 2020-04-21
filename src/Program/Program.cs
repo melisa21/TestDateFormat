@@ -7,7 +7,7 @@
 // entrada del programa.
 using System;
 
-namespace Program
+namespace TESTDATEFORMAT
 {
     public class Program
     {

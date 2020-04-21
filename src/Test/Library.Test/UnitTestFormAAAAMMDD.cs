@@ -1,4 +1,5 @@
 using NUnit.Framework;
+using Library;
 
 namespace Library.Test
 {
@@ -11,13 +12,30 @@ namespace Library.Test
         {
             string testDate = "10/11/1977";
             //devuelve la fecha en formato “aaaa­‐mm­‐dd”
-            date = testDate.Substring(6) + "-" + testDate.Substring(3, 2) + "-" + testDate.Substring(0, 2);
+            date = Date.ChangeFormatAMD(testDate);
+            
         }
 
         [Test]
-        public void Test1()
+        public void TestCantidaDig()
         {
             Assert.AreEqual("1977-11-10", date);
         }
+
+        
+        [Test]
+        public void TestDia1Dig()
+        {
+            Assert.AreNotEqual("1977-11-1", date);
+        }
+
+        [Test]
+
+        public void TestMes1Dig()
+        {
+            Assert.AreNotEqual("1977-1-10", date);
+        }
+
+
     }
 }
